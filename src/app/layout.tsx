@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist, Geist_Mono, Lilita_One } from 'next/font/google'
 import './globals.css'
 import { ProviderWrapper } from './Provider'
 
@@ -27,7 +27,13 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}>
-        <ProviderWrapper>{children}</ProviderWrapper>
+        <ProviderWrapper
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange>
+          <main className="px-[5rem]">{children}</main>
+        </ProviderWrapper>
       </body>
     </html>
   )

@@ -1,5 +1,11 @@
 import Image from 'next/image'
+import { ModeToggle } from '@/components/modeTogeller'
+import HomePage from '@/pages/HomePage'
 
 export default function Home() {
-  return <h1 className="text-accent">Hello World</h1>
+  return (
+    <>
+      <HomePage></HomePage>
+    </>
+  )
 }
