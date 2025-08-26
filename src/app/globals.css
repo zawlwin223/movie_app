@@ -173,4 +173,8 @@ body {
     background-clip: text;
     text-fill-color: transparent;
   }
+
+  .flexRowLayout {
+    @apply flex items-center gap-5;
+  }
 }

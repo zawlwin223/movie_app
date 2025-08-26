@@ -5,7 +5,7 @@ export default function Navigation() {
   return (
     <nav className="py-4 flex justify-between items-center">
       <h1 className="text-gradient font-bold text-[3rem]">Movie Site</h1>
-      <div className="flex gap-5 items-center">
+      <div className="flexRowLayout ">
         <Input
           type="text"
           className="ps-3 py-2"
@@ -16,7 +16,7 @@ export default function Navigation() {
 
         <a href="">WatchList</a>
       </div>
-      <div className="flex gap-5">
+      <div className="flexRowLayout">
         <button>SignIn</button>
         <ModeToggle></ModeToggle>
       </div>
