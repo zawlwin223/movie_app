@@ -32,7 +32,7 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange>
-          <main className="px-[5rem]">{children}</main>
+          <main className="px-[5rem] pb-8">{children}</main>
         </ProviderWrapper>
       </body>
     </html>

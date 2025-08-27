@@ -8,7 +8,7 @@ import {
 
 export default function MovieCard() {
   return (
-    <Card className="w-[170px] h-[300px] bg-transparent shadow-card p-0 border-0 outline-0 overflow-hidden">
+    <Card className="w-[170px] h-[350px] bg-transparent shadow-card p-0 border-0 outline-0 overflow-hidden">
       {/* Header with full image */}
       <CardHeader className="p-0 h-[70%] overflow-hidden rounded-t-lg flex">
         <img
@@ -23,7 +23,7 @@ export default function MovieCard() {
         <CardTitle className="text-sm font-bold truncate w-full">
           Movie Title
         </CardTitle>
-        <span className="text-xs text-gray-400">Rating:7.8</span>
+        <span className="text-xs text-gray-400 my-1">Rating:7.8</span>
         <span className="text-xs text-gray-400">Release Date: 2023-10-01</span>
       </CardFooter>
     </Card>

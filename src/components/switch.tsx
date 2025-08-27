@@ -1,8 +1,14 @@
 'use client'
 import { useState } from 'react'
 
-const Switcher = () => {
+interface ToggleData {
+  data1: string
+  data2: string
+}
+const Switcher = ({ toggleData }: { toggleData: ToggleData }) => {
   const [isChecked, setIsChecked] = useState(false)
+
+  console.log(typeof null)
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked)
@@ -23,7 +29,7 @@ const Switcher = () => {
               ? 'rounded-[50px] text-gradient bg-[#00ffff]'
               : 'text-body-color'
           }`}>
-          Today
+          {toggleData.data1}
         </span>
         <span
           className={`flex items-center space-x-[6px] rounded py-2 px-[18px] text-sm font-medium ${
@@ -31,7 +37,7 @@ const Switcher = () => {
               ? 'bg-[#00ffff] rounded-[50px] text-gradient'
               : 'text-body-color'
           }`}>
-          This Week
+          {toggleData.data2}
         </span>
       </label>
     </>
