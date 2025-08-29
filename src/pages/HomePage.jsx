@@ -6,9 +6,11 @@ export default function HomePage() {
   return (
     <>
       <Navigation></Navigation>
-      <Trending></Trending>
-      <MainFilm></MainFilm>
-      <PaginationComponent></PaginationComponent>
+      <div className="px-[2rem]">
+        <Trending></Trending>
+        <MainFilm></MainFilm>
+        <PaginationComponent></PaginationComponent>
+      </div>
     </>
   )
 }

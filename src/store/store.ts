@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
+import switchSlice from './slice/switchSlice'
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    switch: switchSlice,
+  },
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

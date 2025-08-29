@@ -1,5 +1,7 @@
 'use client'
 import { useState } from 'react'
+import { useDispatch, UseDispatch } from 'react-redux'
+import { setTrendingSwitch } from '@/store/slice/switchSlice'
 
 interface ToggleData {
   data1: string
@@ -7,11 +9,12 @@ interface ToggleData {
 }
 const Switcher = ({ toggleData }: { toggleData: ToggleData }) => {
   const [isChecked, setIsChecked] = useState(false)
-
-  console.log(typeof null)
+  const dispatch = useDispatch()
 
   const handleCheckboxChange = () => {
+    const trendingState = isChecked ? toggleData.data1 : toggleData.data2
     setIsChecked(!isChecked)
+    dispatch(setTrendingSwitch(trendingState))
   }
 
   return (
