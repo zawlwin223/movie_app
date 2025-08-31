@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setTrendingSwitch } from '@/store/slice/trendingSwitchSlice'
 import { setFilmToWatchSwitch } from '@/store/slice/filmToWatchSwitchSlice'
+import { setSelectGenre } from '@/store/slice/genreSelectSlice'
 
 interface ToggleData {
   data1: string
@@ -23,6 +24,7 @@ const Switcher = ({ toggleData }: { toggleData: ToggleData }) => {
       const filmState = isChecked ? toggleData.data1 : toggleData.data2
       setIsChecked(!isChecked)
       dispatch(setFilmToWatchSwitch(filmState))
+      dispatch(setSelectGenre('All'))
     }
   }
 

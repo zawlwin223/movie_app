@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input'
 import { SelectDemo } from '@/components/select'
 import { useSelector } from 'react-redux'
 import { useFetchGenres } from '@/hooks/useFetchData'
+
 export default function Navigation() {
   const filmState = useSelector(
     (state: any) => state.filmToWatchSwitch.filmToWatchState
@@ -21,6 +22,7 @@ export default function Navigation() {
         />
 
         <SelectDemo
+          key={filmState}
           title={'Genres'}
           placeHolder={`Select ${filmState} Genres`}
           data={data}></SelectDemo>

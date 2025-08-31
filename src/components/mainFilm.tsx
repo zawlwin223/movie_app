@@ -5,14 +5,19 @@ import MovieCard from './movieCard'
 import { useFetchMoviesOrSeries } from '@/hooks/useFetchData'
 import { useSelector } from 'react-redux'
 import PaginationComponent from './pagination'
+import { useState } from 'react'
 
 export default function MainFilm() {
+  const [pagination, setPagination] = useState<number>(1)
   const filmState = useSelector(
     (state: any) => state.filmToWatchSwitch.filmToWatchState
   )
   const genreState = useSelector((state: any) => state.genreSelect.genreState)
 
-  const param = { page: 1, with_genres: genreState === 'All' ? '' : genreState }
+  const param = {
+    page: pagination,
+    with_genres: genreState === 'All' ? '' : genreState,
+  }
   const { data, isLoading, error } = useFetchMoviesOrSeries(filmState, param)
   return (
     <>
@@ -29,7 +34,9 @@ export default function MainFilm() {
         </div>
       </section>
 
-      <PaginationComponent></PaginationComponent>
+      <PaginationComponent
+        pagination={(page) => setPagination(page)}
+        totalPages={500}></PaginationComponent>
     </>
   )
 }
