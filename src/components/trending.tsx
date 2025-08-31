@@ -6,7 +6,9 @@ import SliderComponent from './slider'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 export default function Trending() {
-  const trendingState = useSelector((state: any) => state.switch.trendingState)
+  const trendingState = useSelector(
+    (state: any) => state.trendingSwitch.trendingState
+  )
   console.log('trending state from redux', trendingState)
   const { data, isLoading, error } = useFetchTrendingMovies(trendingState)
   console.log('trending state from redux', data)

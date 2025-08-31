@@ -6,10 +6,10 @@ export default function HomePage() {
   return (
     <>
       <Navigation></Navigation>
-      <div className="px-[2rem]">
+
+      <div className="px-2">
         <Trending></Trending>
         <MainFilm></MainFilm>
-        <PaginationComponent></PaginationComponent>
       </div>
     </>
   )

@@ -9,8 +9,8 @@ const initialState: SwitchState = {
   trendingState: 'Today',
 }
 
-export const switchSlice = createSlice({
-  name: 'switch',
+export const trendingSwitchSlice = createSlice({
+  name: 'trendingSwitch',
   initialState,
   reducers: {
     setTrendingSwitch: (state, action: PayloadAction<string>) => {
@@ -20,6 +20,6 @@ export const switchSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { setTrendingSwitch } = switchSlice.actions
+export const { setTrendingSwitch } = trendingSwitchSlice.actions
 
-export default switchSlice.reducer
+export default trendingSwitchSlice.reducer

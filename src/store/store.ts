@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-import switchSlice from './slice/switchSlice'
+import trendingSwitchSlice from './slice/trendingSwitchSlice'
+import filmToWatchSwitchSlice from './slice/filmToWatchSwitchSlice'
+import genreSelectSlice from './slice/genreSelectSlice'
 
 export const store = configureStore({
   reducer: {
-    switch: switchSlice,
+    trendingSwitch: trendingSwitchSlice,
+    filmToWatchSwitch: filmToWatchSwitchSlice,
+    genreSelect: genreSelectSlice,
   },
 })
 

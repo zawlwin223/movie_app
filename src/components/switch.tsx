@@ -1,7 +1,8 @@
 'use client'
 import { useState } from 'react'
-import { useDispatch, UseDispatch } from 'react-redux'
-import { setTrendingSwitch } from '@/store/slice/switchSlice'
+import { useDispatch } from 'react-redux'
+import { setTrendingSwitch } from '@/store/slice/trendingSwitchSlice'
+import { setFilmToWatchSwitch } from '@/store/slice/filmToWatchSwitchSlice'
 
 interface ToggleData {
   data1: string
@@ -12,9 +13,17 @@ const Switcher = ({ toggleData }: { toggleData: ToggleData }) => {
   const dispatch = useDispatch()
 
   const handleCheckboxChange = () => {
-    const trendingState = isChecked ? toggleData.data1 : toggleData.data2
-    setIsChecked(!isChecked)
-    dispatch(setTrendingSwitch(trendingState))
+    if (toggleData.data1 === 'Today' || toggleData.data1 === 'This Week') {
+      const trendingState = isChecked ? toggleData.data1 : toggleData.data2
+      setIsChecked(!isChecked)
+      dispatch(setTrendingSwitch(trendingState))
+    }
+
+    if (toggleData.data1 === 'Movies' || toggleData.data1 === 'Series') {
+      const filmState = isChecked ? toggleData.data1 : toggleData.data2
+      setIsChecked(!isChecked)
+      dispatch(setFilmToWatchSwitch(filmState))
+    }
   }
 
   return (
